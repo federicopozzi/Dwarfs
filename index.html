@@ -1,0 +1,231 @@
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="phaser.min.js"></script>
+
+    <style>
+    body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #sfondo{
+      position:absolute;
+      height:100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pergamena{
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      position:absolute;
+    }
+    #mappa{
+      position: absolute;
+      top:-4550%; left:-4800%;
+      transform: scale(0.4,0.4);
+      cursor:pointer;
+      display: none;
+    }
+    #mappa1{
+      position: absolute;
+      top:-4550%; left:-4800%;
+      transform: scale(0.4,0.4);
+    }
+
+    #bottoni{
+      position: absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width: 10px; height: 10px;
+
+
+    }
+    #autori{
+      position: absolute;
+      top:-511; left:-3500%;
+      transform: scale(0.45,0.45);
+      cursor:pointer;
+      display:none;
+    }
+    #autori1{
+      position: absolute;
+      top:-511; left:-3500%;
+      transform: scale(0.45,0.45);
+    }
+    #crediti1{
+      position: absolute;
+      top:-480; left:-4200%;
+      transform: scale(0.45,0.45);
+    }
+    #crediti{
+      position: absolute;
+      top:-480; left:-4200%;
+      transform: scale(0.45,0.45);
+      cursor:pointer;
+      display:none;
+    }
+    #testo{
+      position: absolute;
+      top:2090%; left:-2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+
+    }
+    #marroncino{
+      color: #f7deb0;
+      text-decoration: underline;
+    }
+    .fonto{
+    color:#331c11;
+    font-size: 12px;
+    font-family: Post Antiqua BE;
+    width:500px;
+    }
+    .fontoo{
+    color:#331c11;
+    font-size: 12px;
+    font-family: Post Antiqua BE;
+    width:500px;
+    }
+    #poli{
+      position: absolute;
+      top:2250%; left:1580%;
+    }
+    #comunicazione{
+      position: absolute;
+      top:2410%; left:1580%;
+    }
+    #lab{
+      position: absolute;
+      top:2550%; left:1580%;
+    }
+    #prof{
+      position: absolute;
+      top:2700%; left:1580%;
+    }
+    #aa{
+      position: absolute;
+      top:2840%; left:1580%;
+    }
+    #ele{
+      position: absolute;
+      top:2250%; left:600%;
+    }
+    #maria{
+      position: absolute;
+      top:2400%; left:100%;
+    }
+    #leo{
+      position: absolute;
+      top:2540%; left:620%;
+    }
+    #fede{
+      position: absolute;
+      top:2690%; left:575%;
+    }
+    #cram{
+      position: absolute;
+      top:2840%; left:545%;
+    }
+    #titolo{
+      position: absolute;
+      top:-180%; left:190%;
+      cursor: pointer;
+    }
+    #titolo.moove{
+      transform: scale(1.1,1.1);
+      transition: 0.3s;
+    }
+    @font-face {
+   font-family: 'Post Antiqua BE';
+   src: url('Post Antiqua BE Regular.ttf') format('truetype');;
+}
+
+    </style>
+</head>
+<body id="body">
+  <img src="sfondoverissimo.png" id="sfondo" alt="" />
+  <img id="pergamena" src="copertina_def.png">
+
+<div id="bottoni">
+  <p id="poli" class="fonto"><b>Politecnico di Milano, Scuola del Design</b></p>
+  <p id="comunicazione" class="fonto"><b>Corso di Laurea in Design della Comunicazione</b></p>
+  <p id="lab" class="fonto"><b>Laboratorio di Computer Grafica, Sezione C1</b></p>
+  <p id="prof" class="fonto"><b>Proff. M. Bertolo, F. Bruschi, L. Micoli, V. Rana</b></p>
+  <p id="aa" class="fonto"><b>A.A. 2017/2018</b></p>
+
+  <p id="ele" class="fontoo">Elena Buttolo</p>
+  <p id="maria" class="fontoo">Maria Caterina Cedone</p>
+  <p id="leo" class="fontoo">Lorenzo Leo</p>
+  <p id="fede" class="fontoo">Federico Pozzi</p>
+  <p id="cram" class="fontoo">Marco Previdi</p>
+
+<a href="scenasalatrono.html"><img id="titolo"src="titolo.png"></a>
+<img id="mappa1" src="mappa no icona.png">
+
+<a href="mappa.html">
+    <img id="mappa" src="mappa con icona.png">
+</a>
+<img id="autori1" src="autori.png">
+<a href="autori.html">
+    <img id="autori" src="autori con icona.png">
+</a>
+<img id="crediti1" src="crediti no icona.png">
+<a href="crediti.html">
+    <img id="crediti" src="crediti con icona.png">
+</a>
+
+
+</div>
+  <script>
+  function mappa(){
+    $("#mappa").fadeIn();
+    $("#mappa1").fadeOut();
+  }
+  function mappa1(){
+    $("#mappa").fadeOut();
+    $("#mappa1").fadeIn();
+  }
+  function autori(){
+    $("#autori").fadeIn();
+    $("#autori1").fadeOut();
+  }
+  function autori1(){
+    $("#autori").fadeOut();
+    $("#autori1").fadeIn();
+  }
+  function crediti(){
+    $("#crediti").fadeIn();
+    $("#crediti1").fadeOut();
+  }
+  function crediti1(){
+    $("#crediti").fadeOut();
+    $("#crediti1").fadeIn();
+  }
+  function moove(){
+    $("#titolo").addClass("moove");
+  }
+  function nomoove(){
+    $("#titolo").removeClass("moove");
+  }
+    $("#mappa1").on("mouseover",mappa)
+    $("#mappa").on("mouseout",mappa1)
+
+    $("#autori1").on("mouseover",autori)
+    $("#autori").on("mouseout",autori1)
+
+    $("#crediti1").on("mouseover",crediti)
+    $("#crediti").on("mouseout",crediti1)
+
+    $("#titolo").on("mouseover",moove)
+    $("#titolo").on("mouseout",nomoove)
+  </script>
+</body>
+</html>

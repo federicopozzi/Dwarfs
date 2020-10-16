@@ -1,0 +1,388 @@
+<html>
+
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="phaser.min.js"></script>
+  <script src="gioco2.js"></script>
+
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #sfondo {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #gioco2 {
+      position: absolute;
+      top: -800%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #mappa {
+      position: absolute;
+      top: -4580%;
+      left: -3900%;
+      transform: scale(0.4, 0.4);
+      cursor: pointer;
+      display: none;
+    }
+
+    #mappa1 {
+      position: absolute;
+      top: -4580%;
+      left: -3900%;
+      transform: scale(0.4, 0.4);
+    }
+
+    #contornoconta {
+      position: absolute;
+      top: -1400%;
+      left: 2380%;
+      transform: rotate(90deg);
+    }
+
+    #index {
+      position: absolute;
+      top: -418;
+      left: -4400%;
+      transform: scale(0.45, 0.45);
+      cursor: pointer;
+      display: none;
+    }
+
+    #index1 {
+      position: absolute;
+      top: -418;
+      left: -4400%;
+      transform: scale(0.45, 0.45);
+    }
+
+    #bottoni {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+
+    }
+
+    #pergamena {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+
+    #conta {
+      position: relative;
+      top: -1150%;
+      left: 3550%;
+      font-family: Futura;
+      cursor: pointer;
+      font-size: 40px;
+      color: #f7deb0;
+      font-family: Enchanted Land;
+    }
+
+    #perso {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: none;
+    }
+
+    #vinto {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: none;
+    }
+
+    #nanetti {
+      position: absolute;
+      top: 1800%;
+      left: -3200%;
+      transform: scale(0.5, 0.5);
+    }
+
+    #sarta {
+      position: absolute;
+      top: 270%;
+      left: -2190%;
+      transform: scale(0.15, 0.15);
+      display: none;
+    }
+
+    #pane {
+      position: absolute;
+      top: 170%;
+      left: -1710%;
+      transform: scale(0.15, 0.15);
+      display: none;
+    }
+
+    #ombraio {
+      position: absolute;
+      top: 250%;
+      left: -1100%;
+      transform: scale(0.16, 0.16);
+      display: none;
+    }
+
+    #birra {
+      position: absolute;
+      top: 250%;
+      left: -700%;
+      transform: scale(0.15, 0.15);
+      display: none;
+    }
+
+    #testo {
+      position: absolute;
+      top: 1340%;
+      left: -2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+
+    }
+
+    #marroncino {
+      color: #f7deb0;
+      text-decoration: underline;
+    }
+
+    #testo2 {
+      position: absolute;
+      top: -800%;
+      left: -2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+      display: none;
+    }
+
+    #testo3 {
+      position: absolute;
+      top: -800%;
+      left: -2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+      display: none;
+    }
+
+    #frecce {
+      position: absolute;
+      top: -1700%;
+      left: -3700%;
+      transform: scale(0.2, 0.2);
+      display: none;
+
+    }
+
+    @font-face {
+      font-family: 'Enchanted Land';
+      src: url('Enchanted Land.ttf') format('truetype');
+      ;
+    }
+
+    @font-face {
+      font-family: 'Post Antiqua BE';
+      src: url('Post Antiqua BE Regular.ttf') format('truetype');
+      ;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <img src="sfondoverissimo.png" id="sfondo" alt="" />
+  <img id="pergamena" src="pergamena sola.png">
+
+
+
+  <img id="perso" src="pergamena sola.png">
+
+
+  <img id="vinto" src="pergamena sola.png">
+
+
+  <div id="bottoni">
+    <div id="gioco2"></div>
+    <p id="testo2">
+      L'astuzia dei nani non &eacute; stata sufficiente,<br>
+      Bombardo li ha <b>scovati</b> brandendo il suo <b>fendente.</b><br>
+      &Eacute; ora dello <b>scontro senza mezze misure,</b><br>
+      chi avr&aacute; la meglio? <a href="scelta.html"><b id="marroncino">Il duello cominci pure!</b></a><br>
+    </p>
+    <img id="mappa1" src="mappa no icona.png">
+    <p id="testo">Bombardo cerca i <b>nani nascosti chiss&aacute; dove.</b><br>
+
+      <b>Riuscir&aacute;</b> nel suo intento o rimarr&aacute; a <b>mani vuote</b>?
+    </p>
+
+    <img id="contornoconta" src="contornotimer.png">
+    <img id="nanetti" src="nanigioco.png">
+    <img id="sarta" src="SARTA CON FORBICI.PNG">
+    <img id="pane" src="PANETTIERE CON PANO.PNG">
+    <img id="ombraio" src="OMBRELLAIO CON OMBRELLO.png">
+    <img id="birra" src="BIRRAIO CON BOCCALE.png">
+
+    <img id="frecce" src="freccecaccianani.png">
+    <a href="mappa.html">
+      <img id="mappa" src="mappa con icona.png">
+    </a>
+    <p id="testo3">Il talento dei nani nel trovare un <b>nascondiglio</b><br>
+
+      li ha <a href="naniscappano.html"><b id="marroncino">salvati</b></a> dalle grinfie di Bombardo.<br>
+
+    </p>
+    <div id="conta">0</div>
+    <img id="index1" src="copertina no icona.png">
+    <a href="index.html">
+      <img id="index" src="copertina con icona.png">
+    </a>
+  </div>
+
+  <script>
+    t = 31;
+    a = 0;
+    b = 2;
+    c = 0;
+    f = 1;
+    g = 0;
+
+    function conta() {
+      t = t - 1;
+      $("#conta").text(t);
+      if (a == 0) {
+        setTimeout(conta, 1000);
+      }
+      if (t == 0) {
+        a = 1;
+        t = 2;
+        $("#gioco2").fadeOut();
+        $("#perso").fadeIn();
+        $("#testo3").fadeIn();
+        $("#perso1").fadeIn();
+        $("#conta").fadeOut();
+        $("#testo").fadeOut();
+        $("#nanetti").fadeOut();
+        $("#contornoconta").fadeOut();
+        $("#sarta").fadeOut();
+        $("#ombraio").fadeOut();
+        $("#pane").fadeOut();
+        $("#birra").fadeOut();
+      }
+
+    }
+
+    function mappa() {
+      $("#mappa").fadeIn();
+      $("#mappa1").fadeOut();
+    }
+
+    function mappa1() {
+      $("#mappa").fadeOut();
+      $("#mappa1").fadeIn();
+    }
+
+    function index() {
+      $("#index").fadeIn();
+      $("#index1").fadeOut();
+    }
+
+    function index1() {
+      $("#index").fadeOut();
+      $("#index1").fadeIn();
+    }
+
+    function primavinto() {
+      b = b - 1;
+      a = 1;
+      if (c == 0) {
+        setTimeout(primavinto, 700)
+      }
+      if (b == 0) {
+        c = 1;
+        vinto();
+      }
+    }
+
+    function vinto() {
+      $("#gioco2").fadeOut();
+      $("#vinto").fadeIn();
+      $("#vinto1").fadeIn();
+      $("#sarta").fadeOut();
+      $("#ombraio").fadeOut();
+      $("#pane").fadeOut();
+      $("#birra").fadeOut();
+      $("#contornoconta").fadeOut();
+      $("#nanetti").fadeOut();
+      $("#conta").fadeOut();
+      $("#testo").fadeOut();
+      $("#testo2").fadeIn();
+    }
+
+    function apparisarta() {
+      $("#sarta").fadeIn();
+    }
+
+    function apparipane() {
+      $("#pane").fadeIn();
+    }
+
+    function appariombraio() {
+      $("#ombraio").fadeIn();
+    }
+
+    function apparibirra() {
+      $("#birra").fadeIn();
+    }
+
+    function contaaa() {
+      f = f + 1;
+      if (g == 0) {
+        setTimeout(contaaa, 500)
+      }
+      if (f == 3) {
+        g = 1;
+        apparifreccia()
+      }
+    }
+
+    function apparifreccia() {
+      $("#frecce").fadeIn()
+    }
+
+    function sparisci() {
+      $("#frecce").fadeOut();
+    }
+    contaaa();
+    $("#mappa1").on("mouseover", mappa);
+    $("#mappa").on("mouseout", mappa1);
+
+    $("#index1").on("mouseover", index);
+    $("#index").on("mouseout", index1);
+    conta();
+  </script>
+</body>
+
+</html>

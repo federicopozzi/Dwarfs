@@ -1,0 +1,294 @@
+<html>
+
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="phaser.min.js"></script>
+  <script src="provina.js"></script>
+
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #sfondo {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #conta {
+      position: relative;
+      top: -2670%;
+      left: 65%;
+      font-family: Futura;
+      cursor: pointer;
+      font-size: 40px;
+      color: #f7deb0;
+      font-family: Enchanted Land;
+    }
+
+    #perso {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: none;
+    }
+
+    #pergamena {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+
+    #vinto1 {
+
+      display: none;
+
+    }
+
+    #vinto {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: none;
+    }
+
+    #gioco {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #mappa {
+      position: absolute;
+      top: -4580%;
+      left: -3900%;
+      transform: scale(0.4, 0.4);
+      cursor: pointer;
+      display: none;
+    }
+
+    #mappa1 {
+      position: absolute;
+      top: -4580%;
+      left: -3900%;
+      transform: scale(0.4, 0.4);
+    }
+
+    #index {
+      position: absolute;
+      top: -418;
+      left: -4400%;
+      transform: scale(0.45, 0.45);
+      cursor: pointer;
+      display: none;
+    }
+
+    #index1 {
+      position: absolute;
+      top: -418;
+      left: -4400%;
+      transform: scale(0.45, 0.45);
+    }
+
+    #bottoni {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+
+    }
+
+    #contornoconta {
+      position: absolute;
+      top: -2930%;
+      left: -1100%;
+
+    }
+
+    #testo1 {
+      position: absolute;
+      top: 2280%;
+      left: -2500%;
+      width: 500px;
+      font-size: 18px;
+      text-align: center;
+      font-family: Post Antiqua BE;
+    }
+
+    #testo {
+      position: absolute;
+      top: -800%;
+      left: -2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+
+    }
+
+    #marroncino {
+      color: #f7deb0;
+      text-decoration: underline;
+    }
+
+    #testo2 {
+      position: absolute;
+      top: -800%;
+      left: -2500%;
+      width: 500px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Post Antiqua BE;
+      display: none;
+    }
+
+    @font-face {
+      font-family: 'Post Antiqua BE';
+      src: url('Post Antiqua BE Regular.ttf') format('truetype');
+      ;
+    }
+
+    @font-face {
+      font-family: 'Enchanted Land';
+      src: url('Enchanted Land.ttf') format('truetype');
+      ;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <img src="sfondoverissimo.png" id="sfondo" alt="" />
+  <img id="pergamena" src="pergamena sola.png">
+
+  <div id="gioco"></div>
+  <a href="terzo.html">
+
+  </a>
+
+
+  <img id="perso" src="pergamena sola.png">
+
+
+
+  <div id="boccale"></div>
+  <img id="vinto" src="pergamena sola.png">
+
+
+
+  <div id="bottoni">
+    <img id="mappa1" src="mappa no icona.png">
+    <div id="vinto1">
+      <p id="testo"><br>I cittadini li accolsero di buon grado e i nani iniziarono a <b>lavorare.</b><br><a href="scenamercato.html"><b id="marroncino">Per ognuno un diverso e stupendo mestiere.</b></a></p>
+
+    </div>
+    <p id="testo2">
+      I nani non han trovato il mestiere a loro adatto,<br>
+      nonostante i tentativi <b>resta una sola possibilit&aacute;:</b> <br>
+      tornare alla <a href="scenasalagiganti.html"><b id="marroncino">corte</b></a>, al soldo del re, tutti e quattro.<br>
+    </p>
+
+    <a href="mappa.html">
+      <img id="mappa" src="mappa con icona.png">
+    </a>
+    <div id="conta">0</div>
+    <img id="contornoconta" src="contornotimer.png">
+    <p id="testo1"> <b>Scappare</b> dal castello e trovare un lavoro in paese, questa l'intenzione.<br> Ma per lavorare han bisogno di un <b>oggetto,</b><br>
+      scegli tu l'<b>accoppiamento perfetto!</b></p>
+    <img id="index1" src="copertina no icona.png">
+    <a href="index.html">
+      <img id="index" src="copertina con icona.png">
+    </a>
+  </div>
+  <script>
+    t = 20;
+    a = 0;
+    b = 2;
+    c = 0;
+
+    function conta() {
+      t = t - 1;
+      $("#conta").text(t)
+      if (a == 0) {
+        setTimeout(conta, 1000);
+      }
+      if (t == 0) {
+        a = 1;
+        t = 1;
+        $("#perso").fadeIn();
+        $("#testo2").fadeIn();
+        $("#conta").fadeOut();
+        $("#testo1").fadeOut();
+        $("#contornoconta").fadeOut();
+        boccale.inputEnabled = false;
+        boccale.input.enableDrag(false);
+        ombrello.inputEnabled = false;
+        ombrello.input.enableDrag(false);
+        ogg_sarto.inputEnabled = false;
+        ogg_sarto.input.enableDrag(false);
+        ogg_pane.inputEnabled = false;
+        ogg_pane.input.enableDrag(false);
+      }
+    };
+
+    function vinto() {
+      $("#vinto").fadeIn();
+      $("#vinto1").fadeIn();
+      $("#conta").fadeOut();
+      $("#contornoconta").fadeOut();
+      $("#testo1").fadeOut();
+      a = 1;
+    }
+
+    function mappa() {
+      $("#mappa").fadeIn();
+      $("#mappa1").fadeOut();
+    }
+
+    function mappa1() {
+      $("#mappa").fadeOut();
+      $("#mappa1").fadeIn();
+    }
+
+    function index() {
+      $("#index").fadeIn();
+      $("#index1").fadeOut();
+    }
+
+    function index1() {
+      $("#index").fadeOut();
+      $("#index1").fadeIn();
+    }
+
+    function primavinto() {
+      b = b - 1;
+      if (c == 0) {
+        setTimeout(primavinto, 700)
+      }
+      if (b == 0) {
+        c = 1;
+        vinto()
+      }
+    }
+    conta();
+    $("#mappa1").on("mouseover", mappa)
+    $("#mappa").on("mouseout", mappa1)
+
+    $("#index1").on("mouseover", index)
+    $("#index").on("mouseout", index1)
+  </script>
+</body>
+
+</html>

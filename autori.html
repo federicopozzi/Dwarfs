@@ -1,0 +1,212 @@
+<html>
+
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="phaser.min.js"></script>
+
+
+    <style>
+
+    body{
+    	width: 100%;
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+    }
+    #sfondo{
+    	position:absolute;
+    	height:100%;
+    	width: 100%;
+    	margin: 0;
+    	padding: 0;
+    }
+
+    #mappa{
+      position: absolute;
+      top:-4580%; left:-3900%;
+      transform: scale(0.4,0.4);
+      cursor:pointer;
+      display: none;
+    }
+    #mappa1{
+      position: absolute;
+      top:-4580%; left:-3900%;
+      transform: scale(0.4,0.4);
+    }
+    #index{
+      position: absolute;
+      top:-418; left:-4400%;
+      transform: scale(0.45,0.45);
+      cursor:pointer;
+      display:none;
+    }
+    #index1{
+      position: absolute;
+      top:-418; left:-4400%;
+      transform: scale(0.45,0.45);
+    }
+    #bottoni{
+      position: absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width: 10px; height: 10px;
+    }
+    #pergamena{
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      position:absolute;
+    }
+
+    #fritz{
+        position: absolute;
+        top:-3755%; left:-3050%;
+        transform: scale(0.5,0.5);
+      }
+    #fritz.ruot{
+      animation: ruota 0.3s infinite alternate;
+
+    }
+    #ele{
+      position: absolute;
+      top:-4415%; left:-50%;
+      transform: scale(0.5,0.5);
+    }
+    #ele.ruot{
+      animation: ruota 0.3s infinite alternate;
+    }
+    #cram{
+      position: absolute;
+      top:-2155%; left:650%;
+      transform: scale(0.5,0.5);
+    }
+    #cram.ruot{
+      animation: ruota 0.3s infinite alternate;
+    }
+    #lore{
+      position: absolute;
+      top:-1815%; left:-2100%;
+      transform: scale(0.5,0.5);
+    }
+    #lore.ruot{
+      animation: ruota 0.3s infinite alternate;
+    }
+    #cate{
+      position: absolute;
+      top:-955%; left:-4470%;
+      transform: scale(0.5,0.5);
+    }
+    #cate.ruot{
+      animation: ruota 0.3s infinite alternate;
+    }
+    #sagome{
+      position: absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width: 10px; height: 10px;
+    }
+
+    @keyframes ruota {
+      from{transform: rotate(0) scale(0.5,0.5)}
+      to {transform: rotate(5deg) scale(0.5,0.5)}
+    }
+    @font-face {
+   font-family: 'Post Antiqua BE';
+   src: url('Post Antiqua BE Regular.ttf') format('truetype');;
+}
+    </style>
+</head>
+<body id="body">
+  <img src="sfondoverissimo.png" id="sfondo" alt="" />
+
+<img id="pergamena" src="Artboard 4 copy.png">
+<div id="sagome">
+  <img id="fritz" src="fritz.png">
+  <img id="ele" src="elena.png">
+  <img id="cram" src="cram.png">
+  <img id="lore" src="lorenzo.png">
+  <img id="cate" src="cate.png">
+</div>
+<div id="bottoni">
+<img id="mappa1" src="mappa no icona.png">
+
+<a href="mappa.html">
+    <img id="mappa" src="mappa con icona.png">
+</a>
+
+<img id="index1" src="copertina no icona.png">
+<a href="index.html">
+    <img id="index" src="copertina con icona.png">
+</a>
+</div>
+<script>
+
+function animazionefritz(){
+  $("#fritz").addClass("ruot");
+}
+function nofritz(){
+    $("#fritz").removeClass("ruot");
+}
+$("#fritz").on("mouseover",animazionefritz);
+$("#fritz").on("mouseout",nofritz);
+
+function animazioneele(){
+  $("#ele").addClass("ruot")
+}
+function noele(){
+    $("#ele").removeClass("ruot");
+}
+$("#ele").on("mouseover",animazioneele);
+$("#ele").on("mouseout",noele);
+
+function animazionecram(){
+  $("#cram").addClass("ruot")
+}
+function nocram(){
+  $("#cram").removeClass("ruot")
+}
+$("#cram").on("mouseover",animazionecram);
+$("#cram").on("mouseout",nocram);
+
+function animazionelore(){
+  $("#lore").addClass("ruot")
+}
+function nolore(){
+  $("#lore").removeClass("ruot")
+}
+$("#lore").on("mouseover",animazionelore);
+$("#lore").on("mouseout",nolore);
+
+function animazionecate(){
+  $("#cate").addClass("ruot")
+}
+function nocate(){
+  $("#cate").removeClass("ruot")
+}
+$("#cate").on("mouseover",animazionecate);
+$("#cate").on("mouseout",nocate);
+function mappa(){
+  $("#mappa").fadeIn();
+  $("#mappa1").fadeOut();
+}
+function mappa1(){
+  $("#mappa").fadeOut();
+  $("#mappa1").fadeIn();
+}
+function index(){
+  $("#index").fadeIn();
+  $("#index1").fadeOut();
+}
+function index1(){
+  $("#index").fadeOut();
+  $("#index1").fadeIn();
+}
+
+  $("#mappa1").on("mouseover",mappa)
+  $("#mappa").on("mouseout",mappa1)
+
+  $("#index1").on("mouseover",index)
+  $("#index").on("mouseout",index1)
+</script>
+</body>
+</html>

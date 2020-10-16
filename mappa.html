@@ -1,0 +1,207 @@
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="phaser.min.js"></script>
+    <style>
+    body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #sfondo{
+      position:absolute;
+      height:100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #index{
+      position: absolute;
+      top:20%; left:60%;
+      font-size: 20px;
+      font-family: Post Antiqua BE;
+      cursor:pointer;
+      color:red;
+    }
+    #pergamena{
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      position:absolute;
+    }
+    #index{
+      position: absolute;
+      top:-418; left:-4400%;
+      transform: scale(0.45,0.45);
+      cursor:pointer;
+      display:none;
+    }
+    #index1{
+      position: absolute;
+      top:-418; left:-4400%;
+      transform: scale(0.45,0.45);
+    }
+    #bottoni{
+      position: absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width: 10px; height: 10px;
+    }
+    .fonto{
+      width: 500px;
+      color:#331c11;
+      font-family: Post Antiqua BE;
+      font-size: 23px;
+    }
+    #nelpalazzo{
+      position: absolute;
+      top:1900%; left:-580%;
+    }
+    #sentenza{
+      text-align: right;
+      position: absolute;
+      top:1459%; left:-6000%;
+    }
+    #mestiere{
+      position: absolute;
+      top:240%; left:-1870%;
+    }
+    #lavoro{
+      position: absolute;
+      top:-270%; left:-3070%;
+    }
+    #arriva{
+      position: absolute;
+      top:-800%; left:-3070%;
+    }
+    #caccia{
+      position: absolute;
+      top:-1940%; left:-1770%;
+    }
+    #notrova{
+      position: absolute;
+      top:-800%; left:-1000%;
+    }
+    #scelta{
+      position: absolute;
+      top:-1780%; left:1570%;
+    }
+    #ko{
+      position: absolute;
+      top:-200%; left: 220%;
+    }
+    #vittoria{
+      position: absolute;
+      top:450%; left: 2600%;
+    }
+    #ooo{
+      position: absolute;
+      top:650%; left:-280%;
+      width: 500px;
+      color:#331c11;
+      font-family: Enchanted Land;
+      font-size: 50px;
+    }
+    .fontoo{
+      width: 500px;
+      color:#331c11;
+      font-family: Enchanted Land;
+      font-size: 35px;
+    }
+    #o1o{
+      position: absolute;
+      top:750%; left:-1180%;
+    }
+    #o2o{
+      position: absolute;
+      top:5%; left:-2520%;
+    }
+    #o3o{
+      position: absolute;
+      top:-555%; left:-3620%;
+    }
+    #o4o{
+      position: absolute;
+      top:-1555%; left:-3120%;
+    }
+    #o5o{
+      position: absolute;
+      top:-2920%; left:-2060%;
+    }
+    #o6o{
+      position: absolute;
+      top:-1555%; left:-620%;
+    }
+    #o7o{
+      position: absolute;
+      top:-2810%; left:2240%;
+    }
+    #o9o{
+      position: absolute;
+      top:-985%; left:870%;
+    }
+    #o8o{
+      position: absolute;
+      top:-130%; left:2320%;
+    }
+    @font-face {
+   font-family: 'Post Antiqua BE';
+   src: url('Post Antiqua BE Regular.ttf') format('truetype');;
+  }
+  @font-face {
+  font-family: 'Enchanted Land';
+  src: url('Enchanted Land.ttf') format('truetype');;
+}
+    </style>
+</head>
+<body id="body">
+  <img src="sfondoverissimo.png" id="sfondo" alt="" />
+  <img id="pergamena" src="mappanoscritte.png">
+
+  <div id="bottoni">
+
+<p id="nelpalazzo" class="fonto"><b>Nel palazzo<br>ducale</b></p>
+<p id="sentenza" class="fonto"><b>La sentenza del<br>gigante</b></p>
+<p id="mestiere" class="fonto"><b>Ad ognuno il suo mestiere</b></p>
+<p id="lavoro" class="fonto"><b>I nani al lavoro</b></p>
+<p id="arriva" class="fonto"><b>Arriva Bombardo!</b></p>
+<p id="caccia" class="fonto"><b>A caccia<br>dei nani</b></p>
+<p id="notrova" class="fonto"><b>Bombardo non<br>li ha trovati</b></p>
+<p id="scelta" class="fonto"><b>Martello o spada?</b></p>
+<p id="ko" class="fonto"><b>Bombardo &eacute; KO!</b></p>
+<p id="vittoria" class="fonto"><b>La vittoria &eacute;<br>di Bombardo!</b></p>
+
+
+<a href="scenasalagiganti.html"><p id="o1o" class="fontoo">010</p></a>
+<a href="scenasalatrono.html"><p id="ooo">000</p></a>
+<a href="gioco1.html"><p id="o2o" class="fontoo">020</p></a>
+<a href="scenamercato.html"><p id="o3o" class="fontoo">030</p></a>
+<a href="arrivabomb.html"><p id="o4o" class="fontoo">040</p></a>
+<a href="gioco21.html"><p id="o5o" class="fontoo">050</p></a>
+<a href="naniscappano.html"><p id="o6o" class="fontoo">060</p></a>
+<a href="scelta.html"><p id="o7o" class="fontoo">070</p></a>
+<a href="scenabombardomartellato.html"><p id="o9o" class="fontoo">090</p></a>
+<a href="scenananimorti.html"><p id="o8o" class="fontoo">080</p></a>
+
+  <img id="index1" src="copertina no icona.png">
+  <a href="index.html">
+      <img id="index" src="copertina con icona.png">
+  </a>
+  </div>
+  <script>
+
+  function index(){
+    $("#index").fadeIn();
+    $("#index1").fadeOut();
+  }
+  function index1(){
+    $("#index").fadeOut();
+    $("#index1").fadeIn();
+  }
+    $("#index1").on("mouseover",index)
+    $("#index").on("mouseout",index1)
+
+  </script>
+</body>
+</html>
